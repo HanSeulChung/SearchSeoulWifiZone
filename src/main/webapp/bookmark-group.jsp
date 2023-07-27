@@ -5,6 +5,7 @@
   Time: 오후 9:45
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +54,21 @@
 <a> | </a>
 <a href="bookmark-group.jsp">북마크 그룹 관리</a>
 <p></p>
+<button id = "addBookmarkgroup" onclick ="location.href='bookmark-group-add.jsp'" >북마크 그룹 이름 추가</button>
 
+<table id="bookmarkGroup">
+    <tr>
+        <th>ID</th>
+        <th>북마크 이름</th>
+        <th>순서</th>
+        <th>등록일자</th>
+        <th>수정일자</th>
+        <th>비고</th>
+    </tr>
 
+    <tr>
+        <td colspan="6"> 북마크 그룹을 추가해 주세요.</td>
+    </tr>
+</table>
 </body>
 </html>

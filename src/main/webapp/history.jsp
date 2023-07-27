@@ -56,6 +56,7 @@
         <th>비고</th>
     </tr>
     <tr>
+        <td colspan="5">조회된 위치 정보가 존재하지 않습니다.</td>
     </tr>
 </table>
 </body>

@@ -10,23 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bd32dbe-6969-4b98-9f39-08b544aa57cd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/ApiExplorer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/SQLiteDBTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-group-add-submit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-group-add.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-group-delete-submit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-group-delete.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-group-edit-submit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-group-edit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-group-manage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-list-view.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/detail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/history.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/load-wifi.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/BookMarkGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/load-location.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/example/mission1/ApiExplorer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/example/mission1/HelloServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/example/mission1/SQLiteDBTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmark-group-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-group-add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmark-group-manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-group.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/history.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/history.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/load-wifi.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/load-wifi.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +31,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -63,7 +59,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.17089844",
     "project.structure.side.proportion": "0.5365566",
@@ -175,7 +174,34 @@
       <option name="presentableId" value="Default" />
       <updated>1690331641393</updated>
       <workItem from="1690331642429" duration="3000" />
+      <workItem from="1690414236609" duration="12574000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/main/webapp/load-location.js</url>
+          <line>2</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

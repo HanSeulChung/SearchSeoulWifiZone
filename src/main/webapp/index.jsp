@@ -33,6 +33,7 @@
         padding-top: 20px;
         padding-bottom: 20px;
     }
+
   </style>
 </head>
 <body>
@@ -44,21 +45,25 @@
 <a> | </a>
 <a href="load-wifi.jsp">Open API 와이파이 정보 가져오기</a>
 <a> | </a>
-<a href="load-wifi.jsp">북마크 보기</a>
+<a href="bookmark-list-view.jsp">북마크 보기</a>
 <a> | </a>
-<a href="load-wifi.jsp">북마크 그룹 관리</a>
+<a href="bookmark-group.jsp">북마크 그룹 관리</a>
 <a> | </a>
 <a href="hello-servlet">Hello Servlet</a>
 <p></p>
-<a>LAT: </a> <input type="text"> ,
-<a>LNT: </a> <input type="text">
-<button>내 위치 가져오기</button>
-<button>근처 WIFI 정보 보기</button>
+<a>LAT: </a>
+<%--<--min max 제한도 둘건지? -->--%>
+<input id ="LAT" type="text" value = 0.0 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">,
+<a>LNT: </a>
+<input id ="LNT" type="text" value = 0.0 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+<button id ="btnLocation" onclick="js:loadGeo()">내 위치 가져오기</button>
+<button id ="btnNearwifiInfo">근처 WIFI 정보 보기</button>
+
 
 <p></p>
 <table id="wifiInfos">
   <tr>
-<%--    /*17개*/--%>
+<%--&lt;%&ndash;    /*17개*/-->--%>
     <th>거리(Km)</th>
     <th>관리번호</th>
     <th>자치구</th>
@@ -101,5 +106,6 @@
 
   </tr>
 </table>
+<script src = "load-location.js" charset="UTF-8"></script>
 </body>
 </html>
