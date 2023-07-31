@@ -1,0 +1,75 @@
+-- wifi 정보
+CREATE TABLE IF NOT EXISTS WIFI_INFO (
+	-- 관리번호
+	MANAGE_NO        VARCHAR(255) PRIMARY KEY NOT NULL,
+	-- 거리
+	DISTANCE         INTEGER,
+	-- 자치구
+	BOROUGH          VARCHAR(255),
+	-- 와이파이명
+	WIFI_NAME        VARCHAR(255),
+	-- 도로명주소
+	ROAD_ADDR        VARCHAR(255),
+	-- 상세주소
+	DETAIL_ADDR      VARCHAR(255),
+	-- 설치위치
+	INSTALL_LOC      VARCHAR(255),
+	-- 설치유형
+	INSTALL_TYPE     VARCHAR(255),
+	-- 설치기관
+	INSTALL_AGENCY   VARCHAR(255),
+	-- 서비스구분
+	SERVICE_CLASSFIY VARCHAR(255),
+	-- 망종류
+	NET_TYPE         VARCHAR(255),
+	-- 설치년도
+	INSTALL_YEAR     INTEGER,
+	-- 실내외구분
+	IN_OR_OUT        VARCHAR(255),
+	-- WIFI접속환경
+	WIFI_CON_ENV     VARCHAR(255),
+	-- X좌표
+	LAT              INTEGER,
+	-- Y좌표
+	LNT              INTEGER,
+	-- 작업일자
+	WORK_DATE        DATE
+);
+
+-- 위치 히스토리
+CREATE TABLE IF NOT EXISTS LOCATION_HISTORY (
+	-- ID
+	HISTORY_DATE INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+	-- X좌표
+	X            INTEGER,
+	-- Y좌표
+	Y            INTEGER,
+	-- 조회일자
+	INQUIRY_DATE DATE
+);
+
+-- 북마크 보기
+CREATE TABLE IF NOT EXISTS BOOKMARK_LIST (
+	-- ID
+	LIST_ID       INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+	-- 북마크이름
+	BOOKMARK_NAME VARCHAR(255),
+	-- 와이파이명
+	WIFI_NAME     VARCHAR(255),
+	-- 등록일자
+	REG_DATE      DATE
+);
+
+-- 북마크 그룹 관리
+CREATE TABLE IF NOT EXISTS BOOKMARK_GROUP_MANAGE (
+	-- ID
+	GROUP_ID      INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+	-- 북마크이름
+	BOOKMARK_NAME VARCHAR(255) NOT NULL,
+	-- 순서
+	ORDER         INTEGER,
+	-- 등록일자
+	REG_DATE      DATE,
+	-- 수정일자
+	EDIT_DATE     DATE
+);
