@@ -10,7 +10,7 @@ public class SQLiteDBTest
 {
     public static void main(String[] args)
     {
-        String url = "jdbc:sqlite://172.31.7.248:3306/test";
+        String url = "jdbc:sqlite:";
         String dbUserId = "";
         String dbUserpassword = "";
         try {

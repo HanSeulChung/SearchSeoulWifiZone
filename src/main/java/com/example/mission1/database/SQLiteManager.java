@@ -8,7 +8,7 @@ public class SQLiteManager {
     // 상수 설정
     //   - Database 변수
     private static final String SQLITE_JDBC_DRIVER = "org.sqlite.JDBC";
-    private static final String SQLITE_FILE_DB_URL = "jdbc:sqlite:sqlite3Test.db";
+    private static final String SQLITE_FILE_DB_URL = "jdbc:sqlite:seoulWifi.db";
     private static final String SQLITE_MEMORY_DB_URL = "jdbc:sqlite::memory";
 
     //  - Database 옵션 변수
