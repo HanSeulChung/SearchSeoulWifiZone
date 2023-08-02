@@ -23,16 +23,13 @@ public class OpenAPI {
     private String apiKey = "7648616b6877307736356369546258";
     private int totalCnt;
 
-    // SQLite DB 관련 설정
-    private String dbUrl = "jdbc:sqlite:C:/Users/w0w12Java/mission/mission1/src/main/db/seoulWifi.db"; // 경로에는 실제 DB 파일 경로를 넣어주세요.
-
     public void fetchAndStoreData() throws IOException {
         int page = 1;
         int pageSize = 1000; // 한 번에 가져올 데이터 개수
 
         WifiRepository wifidb = new WifiRepository();
         wifidb.createWifiTable();
-
+        wifidb.deleteAlldata();
         while (true) {
             String apiUrl = baseUrl + apiKey + "/json/TbPublicWifiInfo/" + page + "/" + (page + pageSize - 1) + "/";
             URL url = new URL(apiUrl);

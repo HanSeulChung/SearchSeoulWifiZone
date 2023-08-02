@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="seoulWifi.db" uuid="e1d66f62-3e4b-44d6-b5e8-bd13154f9a77">
+    <data-source source="LOCAL" name="seoulWifi.db" uuid="6ac12fc6-54ed-40de-b916-6296647ae654">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\w0w12\Java\mission\mission1\seoulWifi.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\w0w12\Java\mission\mission1\src\main\db\seoulWifi.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

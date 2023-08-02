@@ -35,9 +35,9 @@ public class Wifi {
     private String inOrout; //실내외구분
     @SerializedName("X_SWIFI_REMARS3")
     private String wifiConEnv; //설치환경
-    @SerializedName("LAT")
-    private float lat; // 위도
     @SerializedName("LNT")
+    private float lat; // 위도
+    @SerializedName("LAT")
     private float lnt; // 경도
     @SerializedName("WORK_DTTM")
     private String workDate; // 설치날짜
