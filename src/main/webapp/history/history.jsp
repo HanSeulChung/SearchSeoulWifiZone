@@ -43,7 +43,7 @@
 <a> | </a>
 <a href="history.jsp">위치 히스토리 목록 </a>
 <a> | </a>
-<a href="load-wifi.jsp">Open API 와이파이 정보 가져오기</a>
+<a href="../load-wifi.jsp">Open API 와이파이 정보 가져오기</a>
 <a> | </a>
 <a href="hello-servlet">Hello Servlet</a>
 <p></p>

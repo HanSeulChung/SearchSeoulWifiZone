@@ -1,4 +1,4 @@
-package com.example.mission1;
+package com.example.mission1.api;
 
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -28,7 +28,7 @@ public class ApiExplorer {
         URL url = new URL(urlBuilder.toString());
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
-        conn.setRequestProperty("Content-type", "application/xml");
+        conn.setRequestProperty("Content-type", "application/json");
         System.out.println("Response code: " + conn.getResponseCode()); /* 연결 자체에 대한 확인이 필요하므로 추가합니다.*/
         BufferedReader rd;
 

@@ -1,4 +1,4 @@
-package com.example.mission1;
+package com.example.mission1.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package com.example.mission1;
+package com.example.mission1.bookmarkgroup;
 
 import java.sql.Timestamp;
 

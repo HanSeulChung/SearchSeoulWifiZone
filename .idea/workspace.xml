@@ -10,12 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bd32dbe-6969-4b98-9f39-08b544aa57cd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/SQLiteManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/api/OpenAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/wifi/Wifi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/GetOpenAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/SQLiteDBTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/SQLiteDBTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sqlite3Test.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/api/ApiExplorer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/api/ApiExplorer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/api/GetOpenAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/api/GetOpenAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/bookmarkgroup/BookMarkGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/bookmarkgroup/BookMarkGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/database/SQLiteManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/database/SQLiteManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group-add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/history/history.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/history/history.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/load-wifi.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/load-wifi.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +42,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../../../Program Files/Java/jdk1.8.0_301/src.zip!/java/sql/Connection.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -41,6 +52,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2T5SqUbYuL5tmuedbIeXoK0W1vI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -49,15 +63,18 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenDatabaseViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/w0w12&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.17089844&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.5365566&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
@@ -69,6 +86,12 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\w0w12\Java\mission\mission1\src\main\webapp\history" />
+      <recent name="C:\Users\w0w12\Java\mission\mission1\src\main\webapp\bookmarkgroup" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Tomcat 8.5.91" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.91" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
@@ -172,6 +195,9 @@
       <workItem from="1690535623215" duration="1526000" />
       <workItem from="1690710153252" duration="45000" />
       <workItem from="1690775855243" duration="5324000" />
+      <workItem from="1690841024827" duration="18176000" />
+      <workItem from="1690865920984" duration="8999000" />
+      <workItem from="1690927224656" duration="7732000" />
     </task>
     <servers />
   </component>
@@ -188,16 +214,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/main/webapp/load-location.js</url>
-          <line>2</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
