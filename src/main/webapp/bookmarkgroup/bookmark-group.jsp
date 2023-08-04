@@ -5,8 +5,7 @@
   Time: 오후 9:45
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
+
 <html>
 <head>
     <title>와이파이 정보 구하기</title>
@@ -29,22 +28,22 @@
         #bookmarkGroup tr:hover {background-color: #ddd;}
 
         #bookmarkGroup th {
-            padding-top: 12px;
-            padding-bottom: 12px;
+            /*padding-top: 12px;*/
+            /*padding-bottom: 12px;*/
             text-align: center;
             background-color: #04AA6D;
             color: white;
         }
-        #bookmarkGroup td {
-            text-align: center;
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
+        /*#bookmarkGroup td {*/
+        /*    text-align: center;*/
+        /*    padding-top: 20px;*/
+        /*    padding-bottom: 20px;*/
+        /*}*/
     </style>
 </head>
 <body>
 <h1><%= "북마크 그룹" %></h1>
-<a href=" ">홈 </a>
+<a href="/">홈 </a>
 <a> | </a>
 <a href="../history/history.jsp">위치 히스토리 목록 </a>
 <a> | </a>
@@ -55,7 +54,7 @@
 <a href="bookmark-group.jsp">북마크 그룹 관리</a>
 <p></p>
 <button id = "addBookmarkgroup" onclick ="location.href='bookmark-group-add.jsp'" >북마크 그룹 이름 추가</button>
-
+<br/>
 <table id="bookmarkGroup">
     <tr>
         <th>ID</th>
