@@ -44,8 +44,11 @@ public class HistoryDeleteServlet extends HttpServlet {
 
         try {
             int id = Integer.parseInt(idStr);
-            HistoryRepository historyRepository = new HistoryRepository();
-            historyRepository.deleteHistoryById(id);
+            if (id == -1) {
+                historyRepository.deleteAlldata();
+            } else if (id >= 1) {
+                historyRepository.deleteHistoryById(id);
+            }
             response.setStatus(HttpServletResponse.SC_OK);
         } catch (NumberFormatException e) {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "잘못된 ID 값입니다.");

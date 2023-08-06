@@ -68,14 +68,17 @@
     <tr>
         <td colspan="5">조회된 위치 정보가 존재하지 않습니다.</td>
     </tr>
-    <% } else {
+    <% } else { %>
+    <tr>
+        <td style="text-align: center" colspan="5"><button onclick="js:allDelete(-1)">전체 삭제</button></td></tr>
+    <%
         for (History history : historyList) { %>
     <tr>
         <td><%= history.getId() %></td>
         <td><%= history.getLat() %></td>
         <td><%= history.getLnt() %></td>
         <td><%= history.getInquiryDate() %></td>
-        <td><button onclick="js:confirmDelete(<%= history.getId() %>)">삭제</button></td>
+        <td style="text-align: center"><button onclick="js:confirmDelete(<%= history.getId() %>)">삭제</button></td>
     </tr>
     <% } } %>
 </table>

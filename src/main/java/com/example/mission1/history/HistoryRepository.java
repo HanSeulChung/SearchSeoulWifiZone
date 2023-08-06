@@ -65,7 +65,12 @@ public class HistoryRepository {
                 String deleteSql = "DELETE FROM LOCATION_HISTORY WHERE ID = ?";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(deleteSql)) {
                     preparedStatement.setInt(1, id);
-                    preparedStatement.executeUpdate();
+                    int rowsAffected = preparedStatement.executeUpdate();
+                    if (rowsAffected > 0) {
+                        System.out.printf("ID=%d 가 삭제되었습니다.\n", id);
+                    } else {
+                        System.out.printf("ID=%d 가 존재하지 않습니다.\n", id);
+                    }
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -99,8 +104,6 @@ public class HistoryRepository {
         }catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
-
         return historyList;
     }
 }
