@@ -56,7 +56,7 @@
 <a>LNT: </a>
 <input id ="LNT" type="text" value = 0.0 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 <button id ="btnLocation" onclick="js:loadGeo()">내 위치 가져오기</button>
-<button id ="btnNearwifiInfo">근처 WIFI 정보 보기</button>
+<button id ="btnNearwifiInfo" onclick="js:sendDatatoServer()">근처 WIFI 정보 보기</button>
 
 
 <p></p>

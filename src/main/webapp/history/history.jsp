@@ -51,7 +51,7 @@
                     if (xhr.readyState === XMLHttpRequest.DONE) {
                         if (xhr.status === 200) {
                             // 성공적으로 삭제되면 history.jsp로 리다이렉트
-                            window.location.href = "history.jsp";
+                            window.location.reload();
                         } else {
                             // 삭제에 실패한 경우 예외 처리
                             alert("삭제에 실패하였습니다.");

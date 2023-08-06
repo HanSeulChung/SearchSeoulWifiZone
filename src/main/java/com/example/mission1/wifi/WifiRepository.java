@@ -1,6 +1,11 @@
 package com.example.mission1.wifi;
 
+import com.example.mission1.history.History;
+
 import java.sql.*;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WifiRepository {
     //private String dbUrl = "jdbc:sqlite:C:/Users/w0w12/Java/mission/mission1/src/main/db/seoulWifi.db"; //
@@ -68,8 +73,8 @@ public class WifiRepository {
                 preparedStatement.setInt(11, wifiInfo.getInstallYear());
                 preparedStatement.setString(12, wifiInfo.getInOrout());
                 preparedStatement.setString(13, wifiInfo.getWifiConEnv());
-                preparedStatement.setFloat(14, wifiInfo.getLat());
-                preparedStatement.setFloat(15, wifiInfo.getLnt());
+                preparedStatement.setDouble(14, wifiInfo.getLat());
+                preparedStatement.setDouble(15, wifiInfo.getLnt());
                 preparedStatement.setString(16, wifiInfo.getWorkDate());
 
                 // 배치에 추가
@@ -88,13 +93,84 @@ public class WifiRepository {
             e.printStackTrace();
         }
     }
-
-    public void insertDistance(int lat, int lnt) {
-        try (Connection connection = DriverManager.getConnection(dbUrl)) {
-
-        } catch (SQLException e) {
+    public void setNullDistance() {
+        try{
+            Class.forName("org.sqlite.JDBC");
+            try (Connection connection = DriverManager.getConnection(dbUrl)){
+                String updateSql = " UPDATE WIFI_INFO SET DISTANCE = NULL;";
+                PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
+                preparedStatement.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+    public void setNearlyDistance(double lat, double lnt) {
+        this.setNullDistance();
+        try{
+            Class.forName("org.sqlite.JDBC");
+            try (Connection connection = DriverManager.getConnection(dbUrl)){
+                String updateSql = "UPDATE WIFI_INFO SET DISTANCE=((LAT - ?) * (LAT - ?)) + ((LNT - ?) * (LNT - ?))" +
+                        "WHERE MANAGE_NO IN (SELECT MANAGE_NO FROM WIFI_INFO ORDER BY ((LAT - ?) * (LAT - ?) + (LNT - ?) * (LNT -  ?)) ASC LIMIT 20);";
+                PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
+                preparedStatement.setDouble(1, lat);
+                preparedStatement.setDouble(2, lat);
+                preparedStatement.setDouble(3, lnt);
+                preparedStatement.setDouble(4, lnt);
+                preparedStatement.setDouble(5, lat);
+                preparedStatement.setDouble(6, lat);
+                preparedStatement.setDouble(7, lnt);
+                preparedStatement.setDouble(8, lnt);
+
+                preparedStatement.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    public List<Wifi> getNearlyWifi(double lat, double lnt) {
+        List<Wifi> nearlywifiList = new ArrayList<>();
+        try{
+            Class.forName("org.sqlite.JDBC");
+            try (Connection connection = DriverManager.getConnection(dbUrl)){
+                String selectSql = "SELECT * FROM WIFI_INFO WHERE DISTANCE IS NOT NULL;";
+                PreparedStatement preparedStatement = connection.prepareStatement(selectSql);
+
+                ResultSet resultSet = preparedStatement.executeQuery();
+
+                while (resultSet.next()) {
+                    Wifi wifiInfo = new Wifi();
+                    wifiInfo.setDistance(resultSet.getDouble("distance"));
+                    wifiInfo.setManageNo(resultSet.getString("MANAGE_NO"));
+                    wifiInfo.setBorough(resultSet.getString("BOROUGH"));
+                    wifiInfo.setWifiName(resultSet.getString("WIFI_NAME"));
+                    wifiInfo.setRoadAddr(resultSet.getString("ROAD_ADDR"));
+                    wifiInfo.setDetailAddr(resultSet.getString("DETAIL_ADDR"));
+                    wifiInfo.setIntallLoc(resultSet.getString("INSTALL_LOC"));
+                    wifiInfo.setInstallType(resultSet.getString("INSTALL_TYPE"));
+                    wifiInfo.setInstallAgency(resultSet.getString("INSTALL_AGENCY"));
+                    wifiInfo.setServiceClassify(resultSet.getString("SERVICE_CLASSFIY"));
+                    wifiInfo.setNetType(resultSet.getString("NET_TYPE"));
+                    wifiInfo.setInstallYear(resultSet.getInt("INSTALL_YEAR"));
+                    wifiInfo.setInOrout(resultSet.getString("IN_OR_OUT"));
+                    wifiInfo.setWifiConEnv(resultSet.getString("WIFI_CON_ENV"));
+                    wifiInfo.setLat(resultSet.getDouble("LAT"));
+                    wifiInfo.setLnt(resultSet.getDouble("LNT"));
+                    wifiInfo.setWorkDate(resultSet.getString("WORK_DATE"));
+
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return nearlywifiList;
     }
 
     public void deleteAlldata() {

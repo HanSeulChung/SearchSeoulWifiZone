@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 public class Wifi {
 
-    private float distance; // 거리(Km)
+    private double distance; // 거리(Km)
     @SerializedName("X_SWIFI_MGR_NO")
     private String manageNo; // 관리번호 : private key
     @SerializedName("X_SWIFI_WRDOFC")
@@ -36,9 +36,9 @@ public class Wifi {
     @SerializedName("X_SWIFI_REMARS3")
     private String wifiConEnv; //설치환경
     @SerializedName("LNT")
-    private float lat; // 위도
+    private double lat; // 위도
     @SerializedName("LAT")
-    private float lnt; // 경도
+    private double lnt; // 경도
     @SerializedName("WORK_DTTM")
     private String workDate; // 설치날짜
 }
