@@ -1,3 +1,6 @@
+<%@ page import="com.example.mission1.wifi.WifiRepository" %>
+<%@ page import="com.example.mission1.wifi.Wifi" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -55,7 +58,7 @@
 <input id ="LAT" type="text" value = 0.0 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">,
 <a>LNT: </a>
 <input id ="LNT" type="text" value = 0.0 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-<button id ="btnLocation" onclick="js:loadGeo()">내 위치 가져오기</button>
+<button id ="btnLocation" onclick="loadGeo()">내 위치 가져오기</button>
 <button id ="btnNearwifiInfo" onclick="js:sendDatatoServer()">근처 WIFI 정보 보기</button>
 
 
@@ -83,27 +86,40 @@
 
 
   </tr>
+    <%
+        WifiRepository wifiRepository = new WifiRepository();
+        wifiRepository.setNullDistance();
+        List<Wifi> wifiList = wifiRepository.getNearlyWifi();
+
+        if (wifiList.isEmpty()) {
+    %>
   <tr>
       <td colspan="17"> 위치 정보를 입력한 후에 조회해 주세요</td>
-<%--    <td></td>--%>
-<%--    <td></td>--%>
-<%--    <td></td>--%>
-<%--    <td></td>--%>
-<%--    <td></td>--%>
-<%--    <td></td>--%>
-<%--    <td></td>--%>
-<%--    <td></td>--%>
-<%--    <td></td>--%>
-<%--    <td></td>--%>
-<%--    <td></td>--%>
-<%--    <td></td>--%>
-<%--    <td></td>--%>
-<%--    <td></td>--%>
-<%--    <td></td>--%>
-<%--    <td></td>--%>
-<%--    <td></td>--%>
-
   </tr>
+    <% } else {
+            for (Wifi wifi : wifiList) { %>
+    <tr>
+        <td><%= wifi.getDistance() %></td>
+        <td><%=  wifi.getDistance() %></td>
+        <td><%=  wifi.getDistance() %></td>
+        <td><%=  wifi.getDistance() %></td>
+        <td><%=  wifi.getDistance() %></td>
+        <td><%=  wifi.getDistance() %></td>
+        <td><%=  wifi.getDistance() %></td>
+        <td><%=  wifi.getDistance() %></td>
+        <td><%=  wifi.getDistance() %></td>
+        <td><%=  wifi.getDistance() %></td>
+        <td><%=  wifi.getDistance() %></td>
+        <td><%=  wifi.getDistance() %></td>
+        <td><%=  wifi.getDistance() %></td>
+        <td><%=  wifi.getDistance() %></td>
+        <td><%=  wifi.getDistance() %></td>
+        <td><%=  wifi.getDistance() %></td>
+        <td><%=  wifi.getDistance() %></td>
+    </tr>
+    <% } } %>
+
+
 </table>
 <script src = "load-location.js" charset="UTF-8"></script>
 </body>

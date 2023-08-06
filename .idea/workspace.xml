@@ -10,16 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bd32dbe-6969-4b98-9f39-08b544aa57cd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ac12fc6-54ed-40de-b916-6296647ae654.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/history/HistoryDeleteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/history/HistoryDeleteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/wifi/Wifi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/wifi/Wifi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/wifi/WifiRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/wifi/WifiRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/wifi/wifiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/wifi/WifiServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/seoulWifi.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/seoulWifi.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/history/history.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/history/history.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/load-location.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/load-location.js" afterDir="false" />
     </list>
@@ -46,8 +39,8 @@
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectColorInfo">{
@@ -197,7 +190,7 @@
       <workItem from="1690841024827" duration="18176000" />
       <workItem from="1690865920984" duration="8999000" />
       <workItem from="1690927224656" duration="17538000" />
-      <workItem from="1691313974949" duration="4593000" />
+      <workItem from="1691313974949" duration="6540000" />
     </task>
     <servers />
   </component>
@@ -218,17 +211,10 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/main/webapp/load-location.js</url>
-          <line>55</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/main/webapp/load-location.js</url>
-          <line>4</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="14" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/mission1/wifi/WifiServlet.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

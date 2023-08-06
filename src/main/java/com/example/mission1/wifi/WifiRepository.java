@@ -132,7 +132,7 @@ public class WifiRepository {
             e.printStackTrace();
         }
     }
-    public List<Wifi> getNearlyWifi(double lat, double lnt) {
+    public List<Wifi> getNearlyWifi() {
         List<Wifi> nearlywifiList = new ArrayList<>();
         try{
             Class.forName("org.sqlite.JDBC");
@@ -144,7 +144,7 @@ public class WifiRepository {
 
                 while (resultSet.next()) {
                     Wifi wifiInfo = new Wifi();
-                    wifiInfo.setDistance(resultSet.getDouble("distance"));
+                    wifiInfo.setDistance(resultSet.getDouble("DISTANCE"));
                     wifiInfo.setManageNo(resultSet.getString("MANAGE_NO"));
                     wifiInfo.setBorough(resultSet.getString("BOROUGH"));
                     wifiInfo.setWifiName(resultSet.getString("WIFI_NAME"));
