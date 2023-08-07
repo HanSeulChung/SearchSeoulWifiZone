@@ -194,6 +194,44 @@ public class WifiRepository {
         return nearlywifiList;
     }
 
+    public Wifi getWifiInfoByManageNo(String manageNo) {
+        Wifi wifiInfo = new Wifi();
+        try{
+            Class.forName("org.sqlite.JDBC");
+            try (Connection connection = DriverManager.getConnection(dbUrl)){
+                String selectSql = "SELECT * FROM WIFI_INFO WHERE MANAGE_NO = ?";
+                PreparedStatement preparedStatement = connection.prepareStatement(selectSql);
+                preparedStatement.setString(1, manageNo);
+                ResultSet resultSet = preparedStatement.executeQuery();
+
+                while (resultSet.next()) {
+                    wifiInfo.setDistance(resultSet.getDouble("DISTANCE"));
+                    wifiInfo.setManageNo(resultSet.getString("MANAGE_NO"));
+                    wifiInfo.setBorough(resultSet.getString("BOROUGH"));
+                    wifiInfo.setWifiName(resultSet.getString("WIFI_NAME"));
+                    wifiInfo.setRoadAddr(resultSet.getString("ROAD_ADDR"));
+                    wifiInfo.setDetailAddr(resultSet.getString("DETAIL_ADDR"));
+                    wifiInfo.setIntallLoc(resultSet.getString("INSTALL_LOC"));
+                    wifiInfo.setInstallType(resultSet.getString("INSTALL_TYPE"));
+                    wifiInfo.setInstallAgency(resultSet.getString("INSTALL_AGENCY"));
+                    wifiInfo.setServiceClassify(resultSet.getString("SERVICE_CLASSFIY"));
+                    wifiInfo.setNetType(resultSet.getString("NET_TYPE"));
+                    wifiInfo.setInstallYear(resultSet.getInt("INSTALL_YEAR"));
+                    wifiInfo.setInOrout(resultSet.getString("IN_OR_OUT"));
+                    wifiInfo.setWifiConEnv(resultSet.getString("WIFI_CON_ENV"));
+                    wifiInfo.setLat(resultSet.getDouble("LAT"));
+                    wifiInfo.setLnt(resultSet.getDouble("LNT"));
+                    wifiInfo.setWorkDate(resultSet.getString("WORK_DATE"));
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return wifiInfo;
+    }
     public void deleteAlldata() {
         try (Connection connection = DriverManager.getConnection(dbUrl)) {
         String deleteAllSql = "DELETE FROM WIFI_INFO";

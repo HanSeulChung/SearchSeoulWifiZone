@@ -92,7 +92,9 @@ function sendWifiServlet() {
                                 <td style="text-align: left;">${wifi.distance}</td>
                                 <td style="text-align: left;">${wifi.X_SWIFI_MGR_NO}</td>
                                 <td style="text-align: left;">${wifi.X_SWIFI_WRDOFC}</td>
-                                <td style="text-align: left;">${wifi.X_SWIFI_MAIN_NM}</td>
+                                <td style="text-align: left;">
+                                    <a href="DetailServlet?manageNo=${encodeURIComponent(wifi.X_SWIFI_MGR_NO)}">
+                                        ${wifi.X_SWIFI_MAIN_NM}</a></td>
                                 <td style="text-align: left;">${wifi.X_SWIFI_ADRES1}</td>
                                 <td style="text-align: left;">${wifi.X_SWIFI_ADRES2}</td>
                                 <td style="text-align: left;">${wifi.X_SWIFI_INSTL_FLOOR}</td>
