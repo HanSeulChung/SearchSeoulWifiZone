@@ -112,17 +112,38 @@ public class WifiRepository {
         try{
             Class.forName("org.sqlite.JDBC");
             try (Connection connection = DriverManager.getConnection(dbUrl)){
-                String updateSql = "UPDATE WIFI_INFO SET DISTANCE=((LAT - ?) * (LAT - ?)) + ((LNT - ?) * (LNT - ?))" +
-                        "WHERE MANAGE_NO IN (SELECT MANAGE_NO FROM WIFI_INFO ORDER BY ((LAT - ?) * (LAT - ?) + (LNT - ?) * (LNT -  ?)) ASC LIMIT 20);";
+                String updateSql = "UPDATE WIFI_INFO" +
+                        " SET DISTANCE = ROUND(6371.0 * 1000.0 * 2.0 * " +
+                        " ASIN(" +
+                        " SQRT(" +
+                        " POWER(SIN(RADIANS(? - LAT) / 2.0), 2) +"  +
+                        " COS(RADIANS(LAT)) * COS(RADIANS(?)) *" +
+                        " POWER(SIN(RADIANS(? - LNT) / 2.0), 2)" +
+                        " )" +
+                        " ) / 1000.0, 4)" +
+                        " WHERE MANAGE_NO IN (" +
+                        " SELECT MANAGE_NO" +
+                        " FROM WIFI_INFO" +
+                        " ORDER BY (" +
+                        " 6371.0 * 1000.0 * 2.0 *" +
+                        " ASIN(" +
+                        " SQRT(" +
+                        " POWER(SIN(RADIANS(? - LAT) / 2.0), 2) +" +
+                        " COS(RADIANS(LAT)) * COS(RADIANS(?)) *" +
+                        " POWER(SIN(RADIANS(? - LNT) / 2.0), 2)" +
+                        " )" +
+                        " )" +
+                        ")" +
+                        " ASC" +
+                        " LIMIT 20" +
+                        ");";
                 PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
                 preparedStatement.setDouble(1, lat);
                 preparedStatement.setDouble(2, lat);
                 preparedStatement.setDouble(3, lnt);
-                preparedStatement.setDouble(4, lnt);
+                preparedStatement.setDouble(4, lat);
                 preparedStatement.setDouble(5, lat);
-                preparedStatement.setDouble(6, lat);
-                preparedStatement.setDouble(7, lnt);
-                preparedStatement.setDouble(8, lnt);
+                preparedStatement.setDouble(6, lnt);
 
                 preparedStatement.executeUpdate();
             } catch (SQLException e) {
@@ -137,7 +158,7 @@ public class WifiRepository {
         try{
             Class.forName("org.sqlite.JDBC");
             try (Connection connection = DriverManager.getConnection(dbUrl)){
-                String selectSql = "SELECT * FROM WIFI_INFO WHERE DISTANCE IS NOT NULL;";
+                String selectSql = "SELECT * FROM WIFI_INFO WHERE DISTANCE IS NOT NULL ORDER BY DISTANCE;";
                 PreparedStatement preparedStatement = connection.prepareStatement(selectSql);
 
                 ResultSet resultSet = preparedStatement.executeQuery();
@@ -161,7 +182,7 @@ public class WifiRepository {
                     wifiInfo.setLat(resultSet.getDouble("LAT"));
                     wifiInfo.setLnt(resultSet.getDouble("LNT"));
                     wifiInfo.setWorkDate(resultSet.getString("WORK_DATE"));
-
+                    nearlywifiList.add(wifiInfo);
                 }
 
             } catch (SQLException e) {

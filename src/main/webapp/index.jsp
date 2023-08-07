@@ -40,6 +40,8 @@
   </style>
 </head>
 <body>
+<% WifiRepository wifiRepository = new WifiRepository();
+    wifiRepository.setNullDistance();%>
 <h1><%= "와이파이 정보 구하기" %></h1>
 <br/>
 <a href=" ">홈 </a>
@@ -63,9 +65,10 @@
 
 
 <p></p>
+
 <table id="wifiInfos">
-  <tr>
-<%--&lt;%&ndash;    /*17개*/-->--%>
+    <thead>
+    <tr>
     <th>거리(Km)</th>
     <th>관리번호</th>
     <th>자치구</th>
@@ -83,42 +86,14 @@
     <th>X좌표</th>
     <th>Y좌표</th>
     <th>작업일자</th>
-
-
+    </thead>
   </tr>
-    <%
-        WifiRepository wifiRepository = new WifiRepository();
-        wifiRepository.setNullDistance();
-        List<Wifi> wifiList = wifiRepository.getNearlyWifi();
 
-        if (wifiList.isEmpty()) {
-    %>
-  <tr>
-      <td colspan="17"> 위치 정보를 입력한 후에 조회해 주세요</td>
-  </tr>
-    <% } else {
-            for (Wifi wifi : wifiList) { %>
-    <tr>
-        <td><%= wifi.getDistance() %></td>
-        <td><%=  wifi.getDistance() %></td>
-        <td><%=  wifi.getDistance() %></td>
-        <td><%=  wifi.getDistance() %></td>
-        <td><%=  wifi.getDistance() %></td>
-        <td><%=  wifi.getDistance() %></td>
-        <td><%=  wifi.getDistance() %></td>
-        <td><%=  wifi.getDistance() %></td>
-        <td><%=  wifi.getDistance() %></td>
-        <td><%=  wifi.getDistance() %></td>
-        <td><%=  wifi.getDistance() %></td>
-        <td><%=  wifi.getDistance() %></td>
-        <td><%=  wifi.getDistance() %></td>
-        <td><%=  wifi.getDistance() %></td>
-        <td><%=  wifi.getDistance() %></td>
-        <td><%=  wifi.getDistance() %></td>
-        <td><%=  wifi.getDistance() %></td>
-    </tr>
-    <% } } %>
-
+    <tbody id="wifiDataBody">
+        <tr>
+            <td colspan="17"> 위치 정보를 입력한 후에 조회해 주세요</td>
+        </tr>
+    </tbody>
 
 </table>
 <script src = "load-location.js" charset="UTF-8"></script>

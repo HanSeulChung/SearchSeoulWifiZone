@@ -1,6 +1,7 @@
 package com.example.mission1.wifi;
 
 
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.List;
 
 @WebServlet("/Wifi")
 public class WifiServlet extends HttpServlet {
@@ -35,9 +38,12 @@ public class WifiServlet extends HttpServlet {
 
             wifiRepository.setNullDistance();
             wifiRepository.setNearlyDistance(lat, lnt);
-
-            PrintWriter out = response.getWriter();
-            out.println("데이터가 성공적으로 추가되었습니다. in Servlet");
+            List<Wifi> wifiData = wifiRepository.getNearlyWifi();
+            System.out.println(wifiData);
+            String jsonData = new Gson().toJson(wifiData);
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(jsonData);
             response.setStatus(HttpServletResponse.SC_OK);
         } catch (NullPointerException e) {
             e.printStackTrace();
