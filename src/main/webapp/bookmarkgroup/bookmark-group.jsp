@@ -1,4 +1,7 @@
-<%--
+<%@ page import="com.example.mission1.bookmarkgroup.BookMarkGroupRepository" %>
+<%@ page import="com.example.mission1.bookmarkgroup.BookMarkGroup" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.sql.Timestamp" %><%--
   Created by IntelliJ IDEA.
   User: w0w12
   Date: 2023-07-26
@@ -29,8 +32,6 @@
         #bookmarkGroup tr:hover {background-color: #ddd;}
 
         #bookmarkGroup th {
-            /*padding-top: 12px;*/
-            /*padding-bottom: 12px;*/
             text-align: center;
             background-color: #04AA6D;
             color: white;
@@ -65,10 +66,39 @@
         <th>수정일자</th>
         <th>비고</th>
     </tr>
+    <%
+        BookMarkGroupRepository bookMarkGroupRepository = new BookMarkGroupRepository();
+        bookMarkGroupRepository.createBookmarkGroupTable();
+        List<BookMarkGroup> bookmarkgroupList = bookMarkGroupRepository.getAllBookmarkgroup();
 
+        if (bookmarkgroupList.isEmpty()) {
+    %>
     <tr>
-        <td colspan="6"> 북마크 그룹을 추가해 주세요.</td>
+        <td style="text-align: center;" colspan="6"> 북마크 그룹을 추가해 주세요.</td>
     </tr>
+    <% } else {
+        for (BookMarkGroup bookmarkgroup : bookmarkgroupList) { %>
+    <tr>
+        <td><%= bookmarkgroup.getId()%></td>
+        <td><%= bookmarkgroup.getBookmarkgroupName()%></td>
+        <td><%= bookmarkgroup.getBookmarkgroupOrder()%></td>
+        <td><%= bookmarkgroup.getRegiDate()%></td>
+        <td>
+            <%
+                Timestamp editDate = bookmarkgroup.getEditDate();
+                if (editDate == null) {
+                    out.print(""); // 기본 값인 null값 일 경우에는 빈칸을 보여줍니다.
+                } else {
+                    out.print(editDate); // 수정해서 값이 바뀌었을 경우 해당 editDate값을 보여줍니다.
+                }
+            %>
+        </td>
+        <td>
+            <a href="bookmark-group-edit.jsp?id=<%= bookmarkgroup.getId() %>&name=<%= bookmarkgroup.getBookmarkgroupName() %>&order=<%= bookmarkgroup.getBookmarkgroupOrder() %>">수정</a>
+            <a href="bookmark-group-delete.jsp?id=<%= bookmarkgroup.getId() %>&name=<%= bookmarkgroup.getBookmarkgroupName() %>&order=<%= bookmarkgroup.getBookmarkgroupOrder() %>">삭제</a>
+        </td>
+    </tr>
+    <% } } %>
 </table>
 </body>
 </html>

@@ -30,6 +30,7 @@
         #bookmarkGroupAdd tr:hover {background-color: #ddd;}
 
         #bookmarkGroupAdd th {
+            width: 19%;
             text-align: center;
             border: 1px solid #ddd;
             background-color: #04AA6D;
@@ -43,9 +44,9 @@
 </head>
 <body>
 <h1><%= "북마크 그룹 추가하기" %></h1>
-<a href=" ">홈 </a>
+<a href="../index.jsp">홈 </a>
 <a> | </a>
-<a href="../history/history.jsp">위치 히스토리 목록 </a>
+<a href="http://localhost:8080">위치 히스토리 목록 </a>
 <a> | </a>
 <a href="../load-wifi.jsp">Open API 와이파이 정보 가져오기</a>
 <a> | </a>
@@ -56,15 +57,16 @@
 
 <table id="bookmarkGroupAdd">
     <tr>
-        <th style="width: 19%">북마크 그룹 이름</th>
-        <td><input type="text"/> </td>
+        <th>북마크 그룹 이름</th>
+        <td><input type="text" id="bookmarkGroupName"/> </td>
     </tr>
     <tr>
-        <th style="width: 19%">순서</th>
-        <td><input type="text"/> </td>
+        <th>순서</th>
+        <td><input type="text" id="bookmarkGroupOrder"/> </td>
     </tr>
     <tr>
-        <td style="text-align: center" colspan="2"><button class="addbutton">추가</button></td></tr>
+        <td style="text-align: center" colspan="2"><button onclick="js:addBookmarkgroup()">추가</button></td></tr>
 </table>
+<script src = "../crud-bookmarkgroup.js" charset="UTF-8"></script>
 </body>
 </html>
