@@ -9,9 +9,16 @@ import java.sql.Timestamp;
 @Setter
 public class BookMarkGroup {
     private int id;
-    private String bookmarkName;
-    private int order;
+    private String bookmarkgroupName;
+    private int bookmarkgroupOrder;
     private Timestamp regiDate;
     private Timestamp editDate;
 
+    public BookMarkGroup(int id, String bookmarkgroupName, int bookmarkgroupOrder, Timestamp regiDate, Timestamp editDate) {
+        this.id = id;
+        this.bookmarkgroupName = bookmarkgroupName;
+        this.bookmarkgroupOrder = bookmarkgroupOrder;
+        this.regiDate = regiDate;
+        this.editDate = editDate;
+    }
 }
