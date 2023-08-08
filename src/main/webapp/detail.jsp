@@ -1,6 +1,8 @@
 <%@ page import="com.example.mission1.wifi.WifiRepository" %>
 <%@ page import="com.example.mission1.wifi.Wifi" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.example.mission1.bookmarkgroup.BookMarkGroupRepository" %>
+<%@ page import="com.example.mission1.bookmarkgroup.BookMarkGroup" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -46,18 +48,25 @@
 <a> | </a>
 <a href="load-wifi.jsp">Open API 와이파이 정보 가져오기</a>
 <a> | </a>
-<a href="bookmark-list-view.jsp">북마크 보기</a>
+<a href="bookmark/bookmark-list-view.jsp">북마크 보기</a>
 <a> | </a>
 <a href="bookmarkgroup/bookmark-group.jsp">북마크 그룹 관리</a>
 <p></p>
 <%--북마크 이름 선택--%>
 <select id="dropdown" >
     <option value="" selected disabled>북마크 이름 선택</option>
-    <option value="option1">옵션 1</option>
-    <option value="option2">옵션 2</option>
-    <option value="option3">옵션 3</option>
+    <% BookMarkGroupRepository bookMarkGroupRepository = new BookMarkGroupRepository();
+        List<BookMarkGroup> currentBookmarkGroup = bookMarkGroupRepository.getAllBookmarkgroup();
+        if (currentBookmarkGroup.size() == 0) {
+            out.print("<option value='' disabled>북마크 그룹이 존재하지 않습니다.</option>");
+        } else {
+            for (BookMarkGroup bookmarkGroup : currentBookmarkGroup) { %>
+    <option value="<%= bookmarkGroup.getId() %>" data-bookmarkname="<%= bookmarkGroup.getBookmarkgroupName() %>">
+        <%= bookmarkGroup.getBookmarkgroupName() %>
+    </option>
+    <% } } %>
 </select>
-<button>북마크 추가하기</button>
+<button onclick="js:addBookmark()">북마크 추가하기</button>
 <% Wifi wifiInfo = (Wifi) request.getAttribute("wifiInfo"); %>
 <% if (wifiInfo != null) { %>
 <table id="wifidetailInfos">
@@ -75,7 +84,7 @@
     </tr>
     <tr>
         <th>와이파이명</th>
-        <td>${wifiInfo.wifiName}</td>
+        <td id="wifiName">${wifiInfo.wifiName}</td>
     </tr>
     <tr>
         <th>도로명주소</th>
@@ -133,6 +142,6 @@
     <p>와이파이 정보를 찾을 수 없습니다.</p>
     <% } %>
 </table>
-
+<script src = "cd-bookmark.js" charset="UTF-8"></script>
 </body>
 </html>
