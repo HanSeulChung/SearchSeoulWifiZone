@@ -67,6 +67,6 @@
     <tr>
         <td style="text-align: center" colspan="2"><button onclick="js:addBookmarkgroup()">추가</button></td></tr>
 </table>
-<script src = "../crud-bookmarkgroup.js" charset="UTF-8"></script>
+<script src = "../javascript/crud-bookmarkgroup.js" charset="UTF-8"></script>
 </body>
 </html>

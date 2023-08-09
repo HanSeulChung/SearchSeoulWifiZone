@@ -73,6 +73,6 @@
             <button onclick="js:deleteBookmark(<%= request.getParameter("id") %>)">삭제</button>
         </td></tr>
 </table>
-<script src = "../cd-bookmark.js" charset="UTF-8"></script>
+<script src = "../javascript/cd-bookmark.js" charset="UTF-8"></script>
 </body>
 </html>

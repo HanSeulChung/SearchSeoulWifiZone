@@ -69,6 +69,6 @@
             <button onclick="js:deleteBookmarkgroup(<%= request.getParameter("id") %>)">삭제</button>
         </td></tr>
 </table>
-<script src = "../crud-bookmarkgroup.js" charset="UTF-8"></script>
+<script src = "../javascript/crud-bookmarkgroup.js" charset="UTF-8"></script>
 </body>
 </html>

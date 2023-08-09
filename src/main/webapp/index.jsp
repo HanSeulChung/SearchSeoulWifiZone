@@ -94,6 +94,6 @@
     </tbody>
 
 </table>
-<script src = "load-location.js" charset="UTF-8"></script>
+<script src = "javascript/load-location.js" charset="UTF-8"></script>
 </body>
 </html>

@@ -141,6 +141,6 @@
     <p>와이파이 정보를 찾을 수 없습니다.</p>
     <% } %>
 </table>
-<script src = "cd-bookmark.js" charset="UTF-8"></script>
+<script src = "javascript/cd-bookmark.js" charset="UTF-8"></script>
 </body>
 </html>

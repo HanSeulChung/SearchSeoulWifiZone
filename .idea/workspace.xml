@@ -10,25 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bd32dbe-6969-4b98-9f39-08b544aa57cd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/bookmarkgroup/BookMarkGroupAddServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/bookmarkgroup/BookMarkGroupAddServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/history/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/history/History.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/history/HistoryAddServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/history/HistoryAddServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/history/HistoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/history/HistoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/wifi/WifiRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/wifi/WifiRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/seoulWifi.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/seoulWifi.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/db/seoulWifi.sqbpro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group-add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group-delete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group-delete.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group-edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group-edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/cd-bookmark.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cd-bookmark.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/history/history.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/history/history.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/load-location.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/load-location.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +191,7 @@
       <workItem from="1691313974949" duration="18871000" />
       <workItem from="1691381335935" duration="21685000" />
       <workItem from="1691444661599" duration="22683000" />
-      <workItem from="1691532258327" duration="9748000" />
+      <workItem from="1691532258327" duration="10719000" />
     </task>
     <servers />
   </component>

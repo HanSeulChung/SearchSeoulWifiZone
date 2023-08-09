@@ -84,6 +84,6 @@
     </tr>
     <% } } %>
 </table>
-<script src = "../delete-history.js" charset="UTF-8"></script>
+<script src = "../javascript/delete-history.js" charset="UTF-8"></script>
 </body>
 </html>
