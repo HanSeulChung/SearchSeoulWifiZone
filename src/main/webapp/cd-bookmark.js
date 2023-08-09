@@ -18,7 +18,7 @@ function addBookmark() {
 }
 
 function deleteBookmark(id) {
-    const bookmarkName = document.getElementById("bookmarkName").value;
+    const bookmarkName = document.getElementById("bookmarkName").innerText;
     const confirmDelete = confirm("'" + bookmarkName + "'을(를) 정말로 삭제하시겠습니까?");
     if (confirmDelete) {
         const xhr = new XMLHttpRequest();

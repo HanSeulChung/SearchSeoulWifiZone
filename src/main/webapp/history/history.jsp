@@ -1,6 +1,7 @@
 <%@ page import="com.example.mission1.history.HistoryRepository" %>
 <%@ page import="com.example.mission1.history.History" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="java.text.SimpleDateFormat" %><%--
   Created by IntelliJ IDEA.
   User: w0w12
   Date: 2023-07-26
@@ -47,7 +48,7 @@
 <a> | </a>
 <a href="../load-wifi.jsp">Open API 와이파이 정보 가져오기</a>
 <a> | </a>
-<a href="../bookmark-list-view.jsp">북마크 보기</a>
+<a href="../bookmark/bookmark-list-view.jsp">북마크 보기</a>
 <a> | </a>
 <a href="../bookmarkgroup/bookmark-group.jsp">북마크 그룹 관리</a>
 <p></p>
@@ -60,13 +61,14 @@
         <th>비고</th>
     </tr>
     <%
+        SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         HistoryRepository historyRepository = new HistoryRepository();
         List<History> historyList = historyRepository.getAllHistory(); // 예시 메서드 이름
 
         if (historyList.isEmpty()) {
     %>
     <tr>
-        <td colspan="5">조회된 위치 정보가 존재하지 않습니다.</td>
+        <td style="text-align: center" colspan="5">조회된 위치 정보가 존재하지 않습니다.</td>
     </tr>
     <% } else { %>
     <tr>
@@ -77,7 +79,7 @@
         <td><%= history.getId() %></td>
         <td><%= history.getLat() %></td>
         <td><%= history.getLnt() %></td>
-        <td><%= history.getInquiryDate() %></td>
+        <td><%= outputFormat.format(history.getInquiryDate()) %></td>
         <td style="text-align: center"><button onclick="js:confirmDelete(<%= history.getId() %>)">삭제</button></td>
     </tr>
     <% } } %>

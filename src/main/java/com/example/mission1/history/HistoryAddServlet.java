@@ -4,8 +4,13 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import java.io.*;
-import java.time.LocalDateTime;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.time.format.DateTimeFormatter;
+import java.util.TimeZone;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +23,6 @@ public class HistoryAddServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, NullPointerException {
         try {
-
             StringBuilder stringBuilder = new StringBuilder();
             BufferedReader br = request.getReader();
             String line;
@@ -28,16 +32,12 @@ public class HistoryAddServlet extends HttpServlet {
 
             // JSON 문자열을 JSON 객체로 파싱
             JsonParser parser = new JsonParser();
-            JsonObject jsonObject = parser.parse(stringBuilder.toString()).getAsJsonObject();;
+            JsonObject jsonObject = parser.parse(stringBuilder.toString()).getAsJsonObject();
 
             // JSON 객체에서 원하는 데이터를 가져옴
             double lat = jsonObject.get("lat").getAsDouble();
             double lnt = jsonObject.get("lnt").getAsDouble();
-            String inquiryDateStr = jsonObject.get("inquiryDate").getAsString();
-            DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
-            LocalDateTime inquiryDate = LocalDateTime.parse(inquiryDateStr, formatter);
-            System.out.println(lat);
-            System.out.println(lnt);
+            Timestamp inquiryDate = Timestamp.from(Instant.now());
 
             History history = new History(0, lat, lnt, inquiryDate); // id는 자동으로 증가하므로 0으로 설정
             historyRepository.createHistoryTable();

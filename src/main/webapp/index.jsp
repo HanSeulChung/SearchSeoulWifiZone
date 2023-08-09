@@ -43,17 +43,15 @@
 <% WifiRepository wifiRepository = new WifiRepository();
     wifiRepository.setNullDistance();%>
 <h1><%= "와이파이 정보 구하기" %></h1>
-<br/>
 <a href=" ">홈 </a>
 <a> | </a>
 <a href="history/history.jsp">위치 히스토리 목록 </a>
 <a> | </a>
 <a href="load-wifi.jsp">Open API 와이파이 정보 가져오기</a>
 <a> | </a>
-<a href="bookmark-list-view.jsp">북마크 보기</a>
+<a href="bookmark/bookmark-list-view.jsp">북마크 보기</a>
 <a> | </a>
 <a href="bookmarkgroup/bookmark-group.jsp">북마크 그룹 관리</a>
-<a> | </a>
 <p></p>
 <a>LAT: </a>
 <%--<--min max 제한도 둘건지? -->--%>

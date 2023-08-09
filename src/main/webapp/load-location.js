@@ -1,7 +1,3 @@
-class UserLocation {
-    static lat = -1.0;
-    static lnt = -1.0;
-}
 function loadGeo() {
     navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError);
 }
@@ -17,7 +13,7 @@ function onGeoError(){
 
 // AJAX 요청 보내기
 function sendDatatoServer() {
-    if (UserLocation.lat != -1 && UserLocation.lnt != -1) {
+    if (document.getElementById("LAT").value != 0.0 && document.getElementById("LNT").value != 0.0) {
         // HistoryAddServlet에 보내는 fucntion 호출 : 사용자의 위치 history db 저장
         sendHistoryAddServlet();
         // WifiServlet에 보내는 function 호출 : 사용자의 위치에서 가장 가까운 20개의 데이터를 거리값을 null에서 값으로 update해준다.
@@ -32,14 +28,9 @@ function sendDatatoServer() {
 function sendHistoryAddServlet() {
     const xhr = new XMLHttpRequest();
     const url = "/History";
-    const curr = new Date();
-    const utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
-    const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
-    const currentTime = new Date(utc + KR_TIME_DIFF).toISOString();
     const data = {
         lat: UserLocation.lat.toString(),
         lnt: UserLocation.lnt.toString(),
-        inquiryDate: currentTime
     };
     console.log(UserLocation.lat);
     console.log(UserLocation.lnt);

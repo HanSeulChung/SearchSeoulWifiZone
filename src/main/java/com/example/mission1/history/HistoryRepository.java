@@ -19,7 +19,7 @@ public class HistoryRepository {
                         "ID  INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "LAT DOUBLE," +
                         "LNT DOUBLE," +
-                        "INQUIRY_DATE TEXT" +
+                        "INQUIRY_DATE TIMESTAMP" +
                         ");";
                 // 테이블 생성 쿼리 실행
                 statement.execute(createTableSql);
@@ -39,9 +39,8 @@ public class HistoryRepository {
             try (PreparedStatement preparedStatement = connection.prepareStatement(insertSql)) {
                 preparedStatement.setDouble(1, history.getLat());
                 preparedStatement.setDouble(2, history.getLnt());
-                DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
-                String inquiryDateStr = history.getInquiryDate().format(formatter);
-                preparedStatement.setString(3, inquiryDateStr);
+                Timestamp inquiryDate = history.getInquiryDate();
+                preparedStatement.setTimestamp(3, inquiryDate);
 
                 preparedStatement.executeUpdate();
             }
@@ -93,8 +92,7 @@ public class HistoryRepository {
                     int id = rs.getInt("id");
                     double lat = rs.getDouble("lat");
                     double lnt = rs.getDouble("lnt");
-                    String inquiryDateStr = rs.getString("inquiry_Date");
-                    LocalDateTime inquiryDate = LocalDateTime.parse(inquiryDateStr);
+                    Timestamp inquiryDate = rs.getTimestamp("inquiry_Date");
                     History history = new History(id, lat, lnt, inquiryDate);
                     historyList.add(history);
                 }

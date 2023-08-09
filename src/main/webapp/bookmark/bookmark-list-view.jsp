@@ -1,6 +1,7 @@
 <%@ page import="com.example.mission1.bookmark.BookMark" %>
 <%@ page import="com.example.mission1.bookmark.BookMarkRepository" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="java.text.SimpleDateFormat" %><%--
   Created by IntelliJ IDEA.
   User: w0w12
   Date: 2023-07-26
@@ -65,6 +66,7 @@
         <th>비고</th>
     </tr>
     <%
+        SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
         BookMarkRepository bookmarkrepository = new BookMarkRepository();
         bookmarkrepository.createBookmarkTable();
         List<BookMark> bookmarkList = bookmarkrepository.getAllBookmark();
@@ -80,7 +82,7 @@
         <td><%=bookmark.getId()%></td>
         <td><%=bookmark.getBookmarkName()%></td>
         <td><%=bookmark.getWifiName()%></td>
-        <td><%=bookmark.getRegiDate()%></td>
+        <td><%=outputFormat.format(bookmark.getRegiDate())%></td>
         <td style="text-align: center"><a href="bookmark-delete.jsp?id=<%= bookmark.getId() %>&bookmarkName=<%=bookmark.getBookmarkName()%>&wifiName=<%= bookmark.getWifiName() %>&regiDate=<%= bookmark.getRegiDate() %>">삭제</a></td>
     </tr>
     <% } } %>

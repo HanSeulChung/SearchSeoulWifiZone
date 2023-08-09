@@ -1,6 +1,5 @@
 package com.example.mission1.wifi;
 
-import com.example.mission1.history.History;
 
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -8,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WifiRepository {
-    //private String dbUrl = "jdbc:sqlite:C:/Users/w0w12/Java/mission/mission1/src/main/db/seoulWifi.db"; //
     private String dbUrl = "jdbc:sqlite:C:/Users/w0w12/Java/mission/mission1/src/main/java/db/seoulWifi.db";
     public void createWifiTable() {
         try {

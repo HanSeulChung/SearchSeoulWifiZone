@@ -1,7 +1,8 @@
 <%@ page import="com.example.mission1.bookmarkgroup.BookMarkGroupRepository" %>
 <%@ page import="com.example.mission1.bookmarkgroup.BookMarkGroup" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.sql.Timestamp" %><%--
+<%@ page import="java.sql.Timestamp" %>
+<%@ page import="java.text.SimpleDateFormat" %><%--
   Created by IntelliJ IDEA.
   User: w0w12
   Date: 2023-07-26
@@ -51,7 +52,7 @@
 <a> | </a>
 <a href="../load-wifi.jsp">Open API 와이파이 정보 가져오기</a>
 <a> | </a>
-<a href="../bookmark-list-view.jsp">북마크 보기</a>
+<a href="../bookmark/bookmark-list-view.jsp">북마크 보기</a>
 <a> | </a>
 <a href="bookmark-group.jsp">북마크 그룹 관리</a>
 <p></p>
@@ -67,6 +68,7 @@
         <th>비고</th>
     </tr>
     <%
+        SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
         BookMarkGroupRepository bookMarkGroupRepository = new BookMarkGroupRepository();
         bookMarkGroupRepository.createBookmarkGroupTable();
         List<BookMarkGroup> bookmarkgroupList = bookMarkGroupRepository.getAllBookmarkgroup();
@@ -82,18 +84,18 @@
         <td><%= bookmarkgroup.getId()%></td>
         <td><%= bookmarkgroup.getBookmarkgroupName()%></td>
         <td><%= bookmarkgroup.getBookmarkgroupOrder()%></td>
-        <td><%= bookmarkgroup.getRegiDate()%></td>
+        <td><%= outputFormat.format(bookmarkgroup.getRegiDate())%></td>
         <td>
             <%
                 Timestamp editDate = bookmarkgroup.getEditDate();
                 if (editDate == null) {
                     out.print(""); // 기본 값인 null값 일 경우에는 빈칸을 보여줍니다.
                 } else {
-                    out.print(editDate); // 수정해서 값이 바뀌었을 경우 해당 editDate값을 보여줍니다.
+                    out.print(outputFormat.format(editDate));  // 수정해서 값이 바뀌었을 경우 해당 editDate값을 보여줍니다.
                 }
             %>
         </td>
-        <td>
+        <td style="text-align: center">
             <a href="bookmark-group-edit.jsp?id=<%= bookmarkgroup.getId() %>&name=<%= bookmarkgroup.getBookmarkgroupName() %>&order=<%= bookmarkgroup.getBookmarkgroupOrder() %>">수정</a>
             <a href="bookmark-group-delete.jsp?id=<%= bookmarkgroup.getId() %>&name=<%= bookmarkgroup.getBookmarkgroupName() %>&order=<%= bookmarkgroup.getBookmarkgroupOrder() %>">삭제</a>
         </td>

@@ -10,9 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bd32dbe-6969-4b98-9f39-08b544aa57cd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/bookmarkgroup/BookMarkGroupAddServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/bookmarkgroup/BookMarkGroupAddServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/history/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/history/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/history/HistoryAddServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/history/HistoryAddServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/history/HistoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/history/HistoryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mission1/wifi/WifiRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mission1/wifi/WifiRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/seoulWifi.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/seoulWifi.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/seoulWifi.sqbpro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group-add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group-delete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group-delete.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group-edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group-edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmarkgroup/bookmark-group.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/cd-bookmark.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cd-bookmark.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/history/history.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/history/history.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/load-location.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/load-location.js" afterDir="false" />
     </list>
@@ -24,9 +38,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
-        <option value="JavaScript File" />
         <option value="Class" />
+        <option value="JavaScript File" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -60,7 +74,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/w0w12/Java/mission/mission1/src/main/db&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/dev/apache-tomcat-8.5.91/lib/servlet-api.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -68,7 +82,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.17089844&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.5365566&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -79,6 +93,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\w0w12\Java\mission\mission1\src\main\webapp\bookmark" />
       <recent name="C:\Users\w0w12\Java\mission\mission1\src\main\webapp\history" />
       <recent name="C:\Users\w0w12\Java\mission\mission1\src\main\webapp\bookmarkgroup" />
     </key>
@@ -190,7 +205,10 @@
       <workItem from="1690841024827" duration="18176000" />
       <workItem from="1690865920984" duration="8999000" />
       <workItem from="1690927224656" duration="17538000" />
-      <workItem from="1691313974949" duration="6540000" />
+      <workItem from="1691313974949" duration="18871000" />
+      <workItem from="1691381335935" duration="21685000" />
+      <workItem from="1691444661599" duration="22683000" />
+      <workItem from="1691532258327" duration="9748000" />
     </task>
     <servers />
   </component>
@@ -213,10 +231,25 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/mission1/wifi/WifiServlet.java</url>
-          <line>19</line>
+          <line>22</line>
           <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/mission1/wifi/WifiServlet.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/mission1/wifi/WifiServlet.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="resultSet" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
