@@ -106,4 +106,58 @@ public class BookMarkRepository {
         }
         return boomarkList;
     }
+
+    public boolean hasBookmarksInGroup(String groupName) {
+        boolean hasBookmarks = false;
+
+        try {
+            Class.forName("org.sqlite.JDBC");
+            try (Connection connection = DriverManager.getConnection(dbUrl)) {
+                String query = "SELECT COUNT(*) FROM BOOKMARK WHERE BOOKMARK_NAME = ?;";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                    preparedStatement.setString(1, groupName);
+                    ResultSet resultSet = preparedStatement.executeQuery();
+                    if (resultSet.next()) {
+                        int count = resultSet.getInt(1);
+                        hasBookmarks = count > 0;
+                    }
+                }
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+
+        return hasBookmarks;
+    }
+
+    public void deleteBookmarksByGroupName(String groupName) {
+        try {
+            Class.forName("org.sqlite.JDBC");
+            try (Connection connection = DriverManager.getConnection(dbUrl)) {
+                String deleteSql = "DELETE FROM BOOKMARK WHERE BOOKMARK_NAME = ?;";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(deleteSql)) {
+                    preparedStatement.setString(1, groupName);
+                    preparedStatement.executeUpdate();
+                }
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void editBookmarksByGroupName(String origingroupName, String newgroupName){
+        try {
+            Class.forName("org.sqlite.JDBC");
+            try (Connection connection = DriverManager.getConnection(dbUrl)) {
+                String updateSql = "UPDATE BOOKMARK SET BOOKMARK_NAME = ? WHERE BOOKMARK_NAME = ?;";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(updateSql)) {
+                    preparedStatement.setString(1, newgroupName);
+                    preparedStatement.setString(2, origingroupName);
+                    preparedStatement.executeUpdate();
+                }
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

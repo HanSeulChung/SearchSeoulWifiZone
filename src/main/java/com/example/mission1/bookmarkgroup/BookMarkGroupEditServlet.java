@@ -1,5 +1,6 @@
 package com.example.mission1.bookmarkgroup;
 
+import com.example.mission1.bookmark.BookMarkRepository;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/EditBookmarkGroup")
 public class BookMarkGroupEditServlet extends HttpServlet {
     private final BookMarkGroupRepository bookmarkgroupRepository = new BookMarkGroupRepository();
+    private final BookMarkRepository bookmarkRepository = new BookMarkRepository();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
@@ -36,12 +38,21 @@ public class BookMarkGroupEditServlet extends HttpServlet {
             JsonObject jsonObject = parser.parse(requestBody).getAsJsonObject();
 
             int id = jsonObject.get("id").getAsInt();
-            String bookmarkGroupName = jsonObject.get("bookmarkGroupName").getAsString();
+            String originbookmarkGroupName = jsonObject.get("originBookmarkGroupName").getAsString();
+            String newbookmarkGroupName = jsonObject.get("newBookmarkGroupName").getAsString();
             int bookmarkGroupOrder = jsonObject.get("bookmarkGroupOrder").getAsInt();
+            boolean hasBookmarks = jsonObject.get("hasBookmarks").getAsBoolean();
             Timestamp editDate = Timestamp.from(Instant.now());
 
-            // 업데이트 작업 수행
-            bookmarkgroupRepository.updateBookmarkgroupTable(bookmarkGroupName, bookmarkGroupOrder, editDate, id);
+            if (hasBookmarks) {
+                bookmarkgroupRepository.updateBookmarkgroupTable(newbookmarkGroupName, bookmarkGroupOrder, editDate, id);
+                bookmarkRepository.editBookmarksByGroupName(originbookmarkGroupName,newbookmarkGroupName);
+
+            } else {
+                // 업데이트 작업 수행
+                bookmarkgroupRepository.updateBookmarkgroupTable(newbookmarkGroupName, bookmarkGroupOrder, editDate, id);
+            }
+
 
             // 응답 데이터 전송
             response.setStatus(HttpServletResponse.SC_OK);

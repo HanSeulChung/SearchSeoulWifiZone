@@ -66,7 +66,7 @@
     <tr>
         <td style="text-align: center" colspan="2">
             <a href="bookmark-group.jsp">돌아가기</a>
-            <button onclick="js:editBookmarkgroup(<%= request.getParameter("id") %>)">수정</button>
+            <button onclick="js:editBookmarkgroup(<%= request.getParameter("id") %>, '<%= request.getParameter("name") %>')">수정</button>
         </td></tr>
 </table>
 <script src = "../javascript/crud-bookmarkgroup.js" charset="UTF-8"></script>

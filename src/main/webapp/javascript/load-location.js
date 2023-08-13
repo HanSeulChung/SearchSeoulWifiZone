@@ -1,3 +1,8 @@
+class UserLocation {
+    static lat = -1.0;
+    static lnt = -1.0;
+}
+
 function loadGeo() {
     navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError);
 }
@@ -15,6 +20,8 @@ function onGeoError(){
 function sendDatatoServer() {
     if (document.getElementById("LAT").value != 0.0 && document.getElementById("LNT").value != 0.0) {
         // HistoryAddServlet에 보내는 fucntion 호출 : 사용자의 위치 history db 저장
+        UserLocation.lat = document.getElementById("LAT").value;
+        UserLocation.lnt = document.getElementById("LNT").value;
         sendHistoryAddServlet();
         // WifiServlet에 보내는 function 호출 : 사용자의 위치에서 가장 가까운 20개의 데이터를 거리값을 null에서 값으로 update해준다.
         sendWifiServlet();

@@ -46,7 +46,7 @@
     </style>
 </head>
 <body>
-<h1><%= "북마크 그룹" %></h1>
+<h1><%= "북마크" %></h1>
 <a href="/">홈 </a>
 <a> | </a>
 <a href="../history/history.jsp">위치 히스토리 목록 </a>
